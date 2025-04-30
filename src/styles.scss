@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and colors */
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+
+/* Responsive breakpoints */
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.webcam-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+
+  .video-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    
+    video, canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    video {
+      object-fit: cover;
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.face-detection {
+  padding: 20px;
+  
+  .face-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    
+    .face-card {
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      
+      .face-info {
+        margin-bottom: 10px;
+      }
+      
+      .emotions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        
+        .emotion-item {
+          padding: 5px 10px;
+          border-radius: 15px;
+          background-color: #f0f0f0;
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
