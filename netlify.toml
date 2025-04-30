@@ -1,6 +1,6 @@
 [build]
-  publish = "dist/voicera-app"
-  command = "ng build --configuration production"
+  publish = "dist/voicera-app/browser"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
